@@ -47,7 +47,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler, CompatibilityMixin):
                     missing_bin('peerflix')
             else:
                 try:
-                    pipe = Popen(['mpv', urls, '--force-window', '--ytdl-format=bv*+ba[format_note*=original][language=en][ext=webm]'] +
+                    pipe = Popen(['mpv', urls, '--force-window'] +
                                  query.get("mpv_args", []))
                 except FileNotFoundError as e:
                     missing_bin('mpv')
